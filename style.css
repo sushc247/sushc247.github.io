@@ -1,0 +1,57 @@
+/* Glassmorphism container */
+.container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+
+    text-align: center;
+    transition: background 0.3s, color 0.3s, backdrop-filter 0.3s;
+}
+
+/* Dark mode glass effect */
+body.dark .container {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 40px rgba(255,255,255,0.05);
+}
+
+/* Glass buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Dark mode buttons */
+
