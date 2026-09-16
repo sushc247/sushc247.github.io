@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Buttons Website</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Choose an Option</h1>
+
+        <button onclick="showEmail()">
+            <i class="fa-solid fa-envelope"></i> Show Email Address
+        </button>
+
+        <button onclick="openLink()">
+            <i class="fa-solid fa-link"></i> Open Link
+        </button>
+
+        <button onclick="startChat()">
+            <i class="fa-solid fa-comments"></i> Start Live Chat
+        </button>
+
+        <button onclick="launchApp()">
+            <i class="fa-solid fa-rocket"></i> Launch App
+        </button>
+
+        <p id="output"></p>
+
+        <div class="toggle-wrapper">
+            <button id="darkToggle" onclick="toggleDarkMode()">
+                <i class="fa-solid fa-moon"></i> Dark Mode
+            </button>
+        </div>
+    </div>
+
+<script>
+    function showEmail() {
+        document.getElementById("output").innerText = "Email: example@email.com";
+    }
+
+    function openLink() {
+        window.open("https://www.google.com", "_blank");
+    }
+
+    function startChat() {
+        let liveChatAvailable = false;
+
+        if (liveChatAvailable) {
+            window.open("https://your-live-chat-url.com", "_blank");
+        } else {
+            document.getElementById("output").innerText = "Live chat unavailable — opening AI bot...";
+            window.open("https://your-ai-bot-url.com", "_blank");
+        }
+    }
+
+    function launchApp() {
+        window.location.href = "myapp://launch";
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+
+        const btn = document.getElementById("darkToggle");
+        if (document.body.classList.contains("dark")) {
+            btn.innerHTML = '<i class="fa-solid fa-sun"></i> Light Mode';
+        } else {
+            btn.innerHTML = '<i class="fa-solid fa-moon"></i> Dark Mode';
+        }
+    }
+</script>
+
+</body>
+</html>
+
